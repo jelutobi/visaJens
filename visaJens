@@ -43,7 +43,7 @@ public class Test {
 		System.out.println("Let's brush some teeth");
 		System.out.println("Putting on the toothpaste");
 		
-		while (teethCount<=32) {
+		while (teethCount<32) {
 			System.out.println("Number of teeth cleaned: " + teethCount);
 			teethCount++;
 			if (teethCount==32) {
