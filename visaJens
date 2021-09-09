@@ -93,10 +93,23 @@ public class Test {
 		System.out.println("Skriv in minuter så ska vi räkna lite");
 		Scanner minutes = new Scanner(System.in);
 		int inputMinutes = minutes.nextInt(); //******************************************************//
-		double hours = inputMinutes/60;		  //kör double istället för int pga fick bara heltal till //
-		double days = hours/24;				  //svar på years även när det var rest efter divisionen  //
-		double years = days/365;			  //******************************************************//
-		System.out.println("Du skrev in " + inputMinutes + " minuter, det blir " + days + " dagar eller " + years + " år.");
+
+		int days;
+		int years;
+		
+		// Skala bort år
+		while(inputMinutes > (365 * 24 * 60)) {
+			inputMinutes = 365 * 24 * 60;
+			years++;
+		}
+		
+		// Skala bort dagar
+		while(inputMinutes > (60 *24)) {
+			inputMinutes = 60 * 24;
+			days++;
+		}
+		
+		System.out.println("Du skrev in " + inputMinutes + " minuter, det blir " + years + " år och " + days + " dagar.");
 		
 		
 	}
