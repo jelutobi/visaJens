@@ -1,0 +1,104 @@
+package blandat;
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		/*1. Skapa ett nytt Java-projekt som heter ”Blandat”
+		  2. Skapa en klass som heter ”Test”
+		  3. Skriv ”System.” och experimentera lite med vilka metoder den har
+		  4. Skriv ut ”Hejsvejs i lingonskogen” i konsollen med System.out
+		  5. Skriv ut ”Hejsvejs
+			 i lingonskogen” i konsollen på 2 olika rader
+		  6. Skriv en loop som räknar ner från 10 och skriver ut alla siffor i konsollen */
+
+		
+		System.out.println("Hejsvejs i lingonskogen");
+		System.out.println("Hejsvejs \ni lingonskogen");
+		
+		/*6. Skriv en loop som räknar ner från 10 och skriver ut alla siffor i konsollen*/
+		
+		int x;
+		
+		for (x=10; x>=0; x--) {					//x är 10, om x inte är 0, ta bort 1 tills x är 0.
+			System.out.println(x);
+		}
+		
+		
+		/*  7. Skriv den kod som implementerar nedanstående pseudokod:
+		  
+			number_of_teeth_cleaned = 0
+			put toothpaste on toothbrush
+			REPEAT
+				procedure clean_tooth
+				number_of_teeth_cleaned = number_of_teeth_cleaned + 1
+			UNTIL number_of_teeth_cleaned = 32
+			rinse toothbrush */
+		
+		
+		int teethCount = 0;
+		
+		System.out.println("Let's brush some teeth");
+		
+		System.out.println("Putting on the toothpaste");
+		
+		while (teethCount!=33) {
+			System.out.println("Number of teeth cleaned: " + teethCount);
+			teethCount++;
+			if (teethCount==32) {
+				System.out.println("Good job, now we have cleaned all of our " + teethCount + " teeth \nCleaning toothbrush");
+				break;
+			}
+		}
+		
+		
+	       /* 8. Gör om följande beskrivning till kod:
+			  Ett program slumpar en siffra mellan 1 och 100 och kan ta emot 
+			  en gissning från användaren	som inmatning. Om användaren gissar 
+			  rätt säger programmet ”Bra jobbat!”, om	användaren gissar fel 
+			  säger den ”Du är dum!” och om användare gissar fel 3 gånger så 
+			  säger programmet ”Too bad!” och exploderar */
+		
+
+		
+		System.out.println("Gissa på en siffra mellan 1 till 100");
+		for (int i = 1; i<=3; i++ ) {
+			Random random = new Random();
+			Scanner input = new Scanner(System.in);
+			int randomNumber = random.nextInt(100) + 1;
+			int guess = input.nextInt();
+			
+			if (randomNumber==guess) {
+			System.out.println("Bra jobbat!");
+			break;
+			}
+			if(randomNumber!=guess) {
+			System.out.println("Du är dum!");			
+			}
+			if (i!=3) {
+				System.out.println("Gissa igen");
+			}
+			if(i==3) {
+			System.out.println("Too bad! EXPLODE");
+			}	
+		}
+		/*9. Skriv den kod som låter användaren mata in x antal minuter och 
+		     sedan räknar ut hur många år	och dagar som det motsvarar. 
+		     Räkna med att ett år alltid är 365 dagar.*/
+		
+		
+		System.out.println("Skriv in minuter så ska vi räkna lite");
+		Scanner minutes = new Scanner(System.in);
+		int inputMinutes = minutes.nextInt(); //******************************************************//
+		double hours = inputMinutes/60;		  //kör double istället för int pga fick bara heltal till //
+		double days = hours/24;				  //svar på years även när det var rest efter divisionen  //
+		double years = days/365;			  //******************************************************//
+		System.out.println("Du skrev in " + inputMinutes + " minuter, det blir " + days + " dagar eller " + years + " år.");
+		
+		
+	}
+
+}
