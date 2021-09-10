@@ -1,0 +1,32 @@
+public class HelloWorld{
+
+     public static void main(String []args){
+        System.out.println("Skriv in minuter så ska vi räkna lite");
+		int inputMinutes = 527865; //******************************************************//
+        System.out.print("Du skrev in " + inputMinutes + " minuter. ");
+
+		int hours = 0;
+		int days = 0;
+		int years = 0;
+
+		// Skala bort år
+		while(inputMinutes >= (365 * 24 * 60)) {
+			inputMinutes -= 365 * 24 * 60;
+			years++;
+		}
+
+		// Skala bort dagar
+		while(inputMinutes >= (60 *24)) {
+			inputMinutes -= 60 * 24;
+			days++;
+		}
+		
+		// Skala bort dagar
+		while(inputMinutes >= 60) {
+			inputMinutes -= 60;
+			hours++;
+		}
+
+		System.out.print("Det blir " + years + " år, " + days + " dagar, " + hours + " timmar och " + inputMinutes + " minuter.");
+     }
+}
